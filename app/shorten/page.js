@@ -30,7 +30,8 @@ const shorten = () => {
                 seturl("")
                 setshorturl("")
                 console.log(result)
-                alert(result.message)})
+                alert(result.message)
+            })
             .catch((error) => console.error(error));
     }
 
@@ -48,8 +49,17 @@ const shorten = () => {
                 />
                 <button onClick={generate} className='bg-purple-500 rounded-lg shadow-lg p-3 py-1 my-3 font-bold text-white'>Generate</button>
             </div>
-            {generated && <> <span className='font-bold text-lg'>Your Link </span><code><Link target="_blank" href={generated}>{generated}</Link> 
-                </code></>}
+            {generated && <> <span className='font-bold text-lg'>Your Link </span><code><Link target="_blank" href={generated}>{generated}</Link>
+            </code>
+                <button
+                    onClick={() => {
+                        navigator.clipboard.writeText(generated);
+                        alert("Link copied!");
+                    }}
+                    className="bg-purple-500 text-white px-3 py-1 rounded-md"
+                >
+                    Copy
+                </button></>}
         </div>
     )
 }
