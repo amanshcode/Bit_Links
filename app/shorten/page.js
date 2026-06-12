@@ -56,7 +56,7 @@ const shorten = () => {
                         navigator.clipboard.writeText(generated);
                         alert("Link copied!");
                     }}
-                    className="bg-purple-500 text-white px-3 py-1 rounded-md"
+                    className="bg-purple-500 text-white px-3 py-1 rounded-md cursor-pointer"
                 >
                     Copy
                 </button></>}
